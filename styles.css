@@ -1,0 +1,20 @@
+#a {
+  margin: 10px;
+  padding: 34px;
+  width: 200px;
+  background-color: #842210;
+  border: 1px solid #ff00ff;
+}
+#a h1 {
+  color: #ff00ff;
+}
+#a p {
+  color: #4d004d;
+}
+.b {
+  margin: 10px;
+  padding: 34px;
+  width: 200px;
+  background-color: #ff33ff;
+  border-color: #7d2717;
+}

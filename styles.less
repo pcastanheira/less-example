@@ -1,0 +1,30 @@
+@the-border: 11px;
+@base-color: #FF00FF;
+@red:        #842210;
+@width: 	 200px;
+@margin:     10px;
+@padding: 	 34px;
+
+#a {
+  margin: @margin;
+  padding: @padding;
+  width: @width;
+  background-color: @red;
+  border: @the-border solid @base-color;
+  
+  	h1{
+	  	color: @base-color;
+  	}
+  	
+  	p { 
+	  	 color: (@base-color * 0.3);
+  	}
+}
+
+.b {
+  margin: @margin;
+  padding: @padding;
+  width: @width;
+  background-color: (@base-color + #003300);
+  border-color: desaturate(@red, 10%);
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+	<head>
+		<title>Test Less Css</title>		
+		<link rel="stylesheet/less" type="text/css" href="styles.less">		
+		<!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+		<script type="text/javascript">
+		less = {
+        	env: "development", // or "production"
+			async: false,       // load imports async
+			fileAsync: false,   // load imports async when in a page under
+                            	// a file protocol
+			poll: 1000,         // when in watch mode, time in ms between polls
+			functions: {},      // user functions, keyed by name
+			dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+			relativeUrls: false,// whether to adjust url's to be relative
+                           		// if false, url's are already relative to the
+                               // entry less file
+			rootpath: ""// a path to add on to the start of every url
+                       //resource
+		};
+
+		function go(){
+			console.log('in');
+				less.modifyVars({
+					'@red': '#0000FF'				
+				});
+			}
+		
+	</script>
+	
+	<script src="less.js" type="text/javascript"></script>
+		
+	</head>
+	<body>
+		<div id="a">
+			<h1>This is a LESS test</h1>
+			<p>Here Some Text</p>
+			<a href="JavaScript:void(0);" onclick="go()">click me!</a>
+		</div>
+		<div class="b">
+			<h1>Here Title</h1>
+			<p>Here Some Text</p>
+		</div>
+	<code>
+		'at console'
+		$ lessc styles.less
+		'compile'
+		$ lessc styles.less > styles.css
+		
+		from node
+		var parser = new(less.Parser)({
+			paths: ['.', './lib'], // Specify search paths for @import directives
+			filename: 'style.less' // Specify a filename, for better error messages
+		});
+	
+		parser.parse('.class { width: (1 + 1) }', function (e, tree) {
+			tree.toCSS({
+			// Minify CSS output
+			compress: true
+			});
+		});
+	</code>
+	</body>
+</html>
